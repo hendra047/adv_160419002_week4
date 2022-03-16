@@ -36,6 +36,14 @@ class StudentListFragment : Fragment() {
         recView.adapter = studentListAdapter
 
         obeserveViewModel()
+
+        refreshLayout.setOnRefreshListener {
+            recView.visibility = View.GONE
+            textError.visibility = View.GONE
+            progressLoad.visibility = View.VISIBLE
+            viewModel.refresh()
+            refreshLayout.isRefreshing = false
+        }
     }
 
     private fun obeserveViewModel() {
