@@ -104,4 +104,24 @@
         android:text="Update"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout4" />
+
+    <Button
+        android:id="@+id/buttonNotif"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Create Notification"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout4"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout4" />
+
+    <ProgressBar
+        android:id="@+id/progressLoadingStudentPhotoDetail"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/imageDetailStudentPhoto"
+        app:layout_constraintEnd_toEndOf="@+id/imageDetailStudentPhoto"
+        app:layout_constraintStart_toStartOf="@+id/imageDetailStudentPhoto"
+        app:layout_constraintTop_toTopOf="@+id/imageDetailStudentPhoto" />
 </androidx.constraintlayout.widget.ConstraintLayout>

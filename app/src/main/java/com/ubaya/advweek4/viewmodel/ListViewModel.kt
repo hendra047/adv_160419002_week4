@@ -43,6 +43,7 @@ class ListViewModel(application: Application) :AndroidViewModel(application) {
             {
                 val sType = object : TypeToken<ArrayList<Student>>() {}.type
                 val result = Gson().fromJson<ArrayList<Student>>(it, sType)
+
                 studentsLiveData.value = result
                 loadingLiveData.value = false
                 Log.d("showvolley", it)
@@ -53,7 +54,7 @@ class ListViewModel(application: Application) :AndroidViewModel(application) {
                 Log.d("showvolley", it.toString())
             }
         ).apply {
-            tag = "TAG"
+            tag = TAG
         }
         queue?.add(stringRequest)
     }

@@ -25,8 +25,13 @@ class StudentListAdapter(val studentList:ArrayList<Student>) : RecyclerView.Adap
             textID.text = student.id
             textName.text = student.name
             buttonDetail.setOnClickListener {
-                val action = StudentListFragmentDirections.actionStudentDetail(student.id!!)
-                Navigation.findNavController(it).navigate(action)
+                val action = student.id?.let {
+                    id -> StudentListFragmentDirections.actionStudentDetail(id)
+                }
+
+                if (action != null) {
+                    Navigation.findNavController(it).navigate(action)
+                }
             }
             imageStudentPhoto.loadImage(student.photoURL, progressLoadingStudentPhoto)
         }
